@@ -139,7 +139,7 @@ def update_dashboard(n_intervals, chart_period):
     day_range = f"${latest_row['day_low']:,.2f} - ${latest_row['day_high']:,.2f}"
     week52_range = f"${latest_row['week52_low']:,.2f} - ${latest_row['week52_high']:,.2f}"
 
-    # Filter data for the chart based on the selected period
+    # Filter data for the chart based on the selected period of time
     now = pd.Timestamp.now()
     if chart_period == "1D":
         delta = pd.Timedelta(days=1)
@@ -173,7 +173,7 @@ def update_dashboard(n_intervals, chart_period):
         line=dict(color='#3498db', width=2),
         marker=dict(size=4)
     ))
-
+    #name axes
     fig.update_layout(
         title=f"SOX Index - {chart_period}",
         xaxis_title="Date",
